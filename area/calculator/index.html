@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Wills Homework 01 Area Perimeter Calculator</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <table>
+            <h1>Area and Perimeter Calculator</h1>
+            <p>Enter the values below and click "Calculate"</p>
+        <tr>
+            <td>Length:</td>
+            <td><input type="text" id="txtLength"/></td>
+        </tr>
+        <tr>
+            <td>Width:</td>
+            <td><input type="text" id="txtWidth"/></td>
+        </tr>
+        <tr>
+            <td>Area:</td>
+            <td><input type="text" disabled="disabled" id="txtArea" /></td>
+        </tr>
+        <tr>
+            <td>Perimeter:</td>
+            <td><input type="text" disabled="disabled" id="txtPerimeter"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="btnCalculate" value="Calculate"/></td>
+        </tr>
+    </table>
+
+
+  <script type="text/javascript">
+      var $ = function (id) {
+          return document.getElementById(id);
+      }
+
+      window.onload = function () {
+          $('btnCalculate').onclick = Calculate;
+      }
+
+      function Calculate() {
+          //assign variables
+          var
+              length,
+              width,
+              area,
+              perimeter;
+
+          //get user data
+          length = $("txtLength").value;
+          width = $("txtWidth").value;
+
+          //calculate Area
+          area = length * width;
+
+          //calculate Perimeter
+          perimeter = (2 * width) + (2 *length);
+
+          //display data
+
+          $("txtArea").value = area;
+          $("txtPerimeter").value = perimeter;
+      }
+
+  </script>
+</body>
+</html>
